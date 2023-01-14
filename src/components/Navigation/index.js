@@ -8,7 +8,7 @@ function Navigation() {
       <Link href='/' className={classNameFunc}>
         Конвертер
       </Link>
-      <Link href='/convert' className={classNameFunc}>
+      <Link href='/exchange-rate' className={classNameFunc}>
         Курсы
       </Link>
     </nav>
