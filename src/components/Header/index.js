@@ -2,11 +2,11 @@ import './Header.css'
 import Logo from '../Logo'
 import Navigation from '../Navigation'
 
-function Header() {
+function Header({onSettings}) {
   return (
     <header className='header'>
       <Logo />
-      <Navigation />
+      <Navigation onSettings={onSettings} />
     </header>
   );
 }

@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { convertCurrency } from '../../utils';
+import { saveState, restoreState } from '../../utils';
 import './Converter.css'
 
 const INPUT_PATTERN = /\d* [A-Z]{3,3} in [A-Z]{3,3}/
@@ -9,6 +10,14 @@ function Converter({rates, onError}) {
   const [convertString, setConvertString] = useState('');
   const [showValidationMessage, setShowValidationMessage] = useState(false);
   const [resultString, setResultString] = useState('');
+
+  useEffect(() => {
+    const state = restoreState();
+    if (state) {
+      setConvertString(state.convertString);
+      setResultString(state.result);
+    }
+  }, []);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -24,7 +33,8 @@ function Converter({rates, onError}) {
       return;
     }
 
-    setResultString(result)
+    setResultString(result);
+    saveState({result, convertString});
   }
 
   const handleInputChange = (evt) => {

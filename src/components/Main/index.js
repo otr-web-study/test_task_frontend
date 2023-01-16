@@ -3,20 +3,18 @@ import './Main.css';
 import Header from '../Header'
 import Converter from '../Converter';
 import ExchangeRate from '../Exchange-rate';
-import PopupInfo from '../PopupInfo';
 import NotFound from '../NotFound';
 
 function Main(props) {
-  const {infoData, onInfoPopupClose} = props;
+  const { onSettings, ...restProps } = props;
   return (
     <div className='main'>
-      <Header />
+      <Header onSettings={onSettings} />
       <Routes>
-        <Route path='/' element={<Converter {...props} />} />
-        <Route path='/exchange-rate' element={<ExchangeRate />} />
+        <Route path='/' element={<Converter {...restProps} />} />
+        <Route path='/exchange-rate' element={<ExchangeRate {...restProps} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-      <PopupInfo data={infoData} onClose={onInfoPopupClose} />
     </div>
   );
 }

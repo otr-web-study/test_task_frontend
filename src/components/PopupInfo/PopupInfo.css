@@ -34,39 +34,6 @@
   text-align: center;
 }
 
-.popup-info__button-close {
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  top: -35px;
-  right: -35px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-}
-
-.popup-info__button-close:hover {
-  opacity: .7;
-}
-
-.popup-info__button-close::before {
-  position: absolute;
-  content: '';
-  height: 32px;
-  border: 2px solid black;
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.popup-info__button-close::after {
-  position: absolute;
-  content: '';
-  height: 32px;
-  border: 2px solid black;
-  top: 0;
-  transform: rotate(-45deg);
-}
-
 .popup-info__container {
   position: relative;
   background-color: #f2f2f2;

@@ -1,0 +1,38 @@
+.rate-element {
+  border: 1px solid #f2f2f2;
+  display: grid;
+  grid-template-columns: 1fr 6fr 40px;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.rate-element__currency {
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  border-right: 1px solid #f2f2f2;
+}
+
+.rate-element__value {
+  margin: 0;
+  text-align: right;
+}
+
+.rate-element__button-copy {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0ccf36;
+  border-radius: 5px;
+  background-color: white;
+  background-image: url(../../images/copy_icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: border .4s, background-color .4s;
+}
+
+.rate-element__button-copy:hover {
+  cursor: pointer;
+  background-color: rgba(12, 207, 54, .5);
+  border: 3px solid #0ccf36;
+}

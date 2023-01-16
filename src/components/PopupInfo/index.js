@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './PopupInfo.css';
 import { ESC_KEY, ENTER_KEY } from '../../constants';
+import ButtonClosePopup from '../ButtonClosePopup';
 
 function PopupInfo({data, onClose}) {
   const { message='' } = data;
@@ -21,7 +22,7 @@ function PopupInfo({data, onClose}) {
   }, [message]);
 
   const handlePopupMouseDown = (evt) => {
-    if (evt.target.classList.contains('popup-info__button-close')
+    if (evt.target.classList.contains('button-close-popup')
         || evt.target.classList.contains('popup-info')) {
       onClose();
     }
@@ -36,7 +37,7 @@ function PopupInfo({data, onClose}) {
         <h2 className='popup-info__title'>
           {message}
         </h2>
-        <button className='popup-info__button-close'></button>
+        <ButtonClosePopup />
       </div>
     </div>
   );

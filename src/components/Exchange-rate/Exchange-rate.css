@@ -1,3 +1,45 @@
 .exchange-rate {
   padding: 0 70px;
 }
+
+.exchange-rate__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 3px 0 59px;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 25px;
+}
+
+.exchange-rate__title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.exchange-rate__update {
+  font-size: 14px;
+  list-style: 16px;
+  font-weight: 400;
+}
+
+.exchange-rete__button-update {
+  margin-left: 10px;
+  border-radius: 8px;
+  background-color: #BC1B23;
+  color: white;
+  font-size: 20px;
+  line-height: 21px;
+  font-weight: 400;
+  width: 44px;
+  height: 44px;
+  border: none;
+  transition: opacity .2s;
+}
+
+.exchange-rete__button-update:hover {
+  opacity: .8;
+  cursor: pointer;
+}

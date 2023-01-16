@@ -1,5 +1,5 @@
 import rates from '../fixtures/rates.js';
-const BASE_URL = 'https://api.apilayer.com/fixer/';
+const BASE_URL = 'https://api.apilayer.com/fixer';
 
 class Api {
 
@@ -16,9 +16,11 @@ class Api {
       .then((text) => Promise.reject({status: res.status, text}));
   }
 
-  getRates() {
-    return fetch(`${this._baseUrl}/latest`, {
+  getRates(base) {
+    return fetch(`${this._baseUrl}/latest?base=${base}`, {
       headers: this._headers,
+      mode: 'cors',
+      credentials: 'include',
     }).then(this._handleResponse);
   }
 
